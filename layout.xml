@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <grid>  
+  <row weight="1">
+    <label id="output" text="Output here..."/>
+    <label id="cstate" text="Connection state..." textalign="left"/>
+  </row>
+  <row  weight="3">
+    <label id="data1" text="Sending..." textalign="left"/>
+  </row>
+  <row  weight="5">
+      <label id="data2" text="Receiving..." textalign="left"/>
+  </row>
+	<row  weight="1">
+		<button text="Connect" ontap="command1"/>
+    <button text="Close" ontap="command2"/>
+	</row>
+  <row  weight="1">
+		<button text="Req. Status" ontap="command3"/>
+    <button text="ADM Status" ontap="command4" />
+	</row>
+    <row  weight="1">
+      <button text="On/Off" ontap="On/Off" />
+      <button text="Mute" ontap="Mute" />
+    </row>
+	<row  weight="1">
+    <button text="Vol. Up" ontap="Volume_Up" />
+    <button text="Vol. Down" ontap="Volume_Down" />
+	</row>
+  </grid>
+</layout>
