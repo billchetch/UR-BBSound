@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
-  <grid>  
-  <row weight="1">
-    <label id="output" text="Output here..."/>
-    <label id="cstate" text="Connection state..." textalign="left"/>
+  <row id="notificationbar" weight="1">
+      <label id="notification" text="" color=""/>
   </row>
-  <row  weight="3">
-    <label id="data1" text="Sending..." textalign="left"/>
+  <row id="header" weight="2">
+    <toggle id="inside" text="INSIDE" onchange="insideChanged"/>
+    <toggle id="outside" text="OUTSIDE" onchange="outsideChanged"/>
   </row>
-  <row  weight="5">
-      <label id="data2" text="Receiving..." textalign="left"/>
+  <row id="body" weight="10">
+    <grid >
+      <row>
+        <button icon="vdown" ontap="Volume_Up"/>
+        <button icon="vup" ontap="Volume_Down"/>
+        <button icon="vmute" ontap="Mute/Unmute"/>
+      </row>
+      <row>
+        <button id="auxOpt" text="Media Player"/>
+      </row>
+      <row>
+        <button id="bluetooth" text="Bluetooth"/>
+      </row>
+      <row>
+        <button id="aux" text="Television"/>
+      </row>
+    </grid>
   </row>
-	<row  weight="1">
-		<button text="Connect" ontap="command1"/>
-    <button text="Close" ontap="command2"/>
-	</row>
-  <row  weight="1">
-		<button text="Req. Status" ontap="command3"/>
-    <button text="ADM Status" ontap="command4" />
-	</row>
-    <row  weight="1">
-      <button text="On/Off" ontap="On/Off" />
-      <button text="Mute" ontap="Mute" />
-    </row>
-	<row  weight="1">
-    <button text="Vol. Up" ontap="Volume_Up" />
-    <button text="Vol. Down" ontap="Volume_Down" />
-	</row>
-  </grid>
+  <row id="footer" weight="1">
+    <label id="" text="" color="black"/>
+  </row>
 </layout>
