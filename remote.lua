@@ -23,7 +23,7 @@ function BBMSClient(serviceName)
 
 	return self;
 end
-local client = BBMSClient();
+local client = BBMSClient(settings.media_service_name);
 client.attachTraceHandler(trace);
 client.attachADMReadyHandler(function(admReady, admState)
 			if admReady then
