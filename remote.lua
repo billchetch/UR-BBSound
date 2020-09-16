@@ -25,11 +25,11 @@ function BBMSClient(serviceName)
 end
 local client = BBMSClient(settings.media_service_name);
 client.attachTraceHandler(trace);
-client.attachADMReadyHandler(function(admReady, admState)
-			if admReady then
+client.attachServiceReadyHandler(function(serviceReady)
+			if serviceReady then
 				notificationBar("We good to go...", "info");
 			else
-				notificationBar("ADM not ready...", "warning");
+				notificationBar("Not ready...", "warning");
 			end
 		end
 	);
@@ -89,7 +89,11 @@ local selectedDeviceID;
 
 function selectArea(area)
 	selectedSoundArea = area;
-	selectedDeviceID = "irt1";
+	if selectedSoundArea == "inside" then
+		selectedDeviceID = "lght1";
+	else
+		selectedDeviceID = "lght2";
+	end
 end
 -- Events
 
@@ -99,12 +103,12 @@ end
 
 events.focus = function()
 
-	utils.assignCommands(actions, "Volume_Up,Volume_Down,On/Off,Mute/Unmute", function(cmd)
-			if client.admReady then
+	utils.assignCommands(actions, "Volume_Down,Volume_Up,On/Off,Mute/Unmute", function(cmd)
+			if client.serviceReady then
 				print("Sending adm command ".. cmd .. " to device " .. selectedDeviceID);
 				client.sendADMCommand(selectedDeviceID, cmd);
 			else
-				utils.showDialog("Cannot execute command as device is not ready.");
+				utils.showDialog("Cannot execute command as service is not ready.");
 			end
 		end
 	);

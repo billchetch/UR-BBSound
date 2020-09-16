@@ -10,8 +10,8 @@
   <row id="body" weight="10">
     <grid >
       <row>
-        <button icon="vdown" ontap="Volume_Up"/>
-        <button icon="vup" ontap="Volume_Down"/>
+        <button icon="vdown" ontap="Volume_Down"/>
+        <button icon="vup" ontap="Volume_Up"/>
         <button icon="vmute" ontap="Mute/Unmute"/>
       </row>
       <row>
