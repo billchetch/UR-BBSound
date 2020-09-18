@@ -15,13 +15,13 @@
         <button icon="vmute" ontap="Mute/Unmute"/>
       </row>
       <row>
-        <button id="auxOpt" text="Media Player"/>
+        <button id="auxOpt" text="Select Media Player" ontap="AuxOpt"/>
       </row>
       <row>
-        <button id="bluetooth" text="Bluetooth"/>
+        <button id="bluetooth" text="Select Bluetooth" ontap="Bluetooth"/>
       </row>
       <row>
-        <button id="aux" text="Television"/>
+        <button id="aux" text="Select Television" ontap="AUX"/>
       </row>
     </grid>
   </row>

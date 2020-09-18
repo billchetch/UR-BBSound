@@ -103,7 +103,7 @@ end
 
 events.focus = function()
 
-	utils.assignCommands(actions, "Volume_Down,Volume_Up,On/Off,Mute/Unmute", function(cmd)
+	utils.assignCommands(actions, "Volume_Down,Volume_Up,On/Off,Mute/Unmute,AuxOpt,Bluetooth,AUX", function(cmd)
 			if client.serviceReady then
 				print("Sending adm command ".. cmd .. " to device " .. selectedDeviceID);
 				client.sendADMCommand(selectedDeviceID, cmd);
