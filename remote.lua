@@ -50,8 +50,9 @@ client.attachReceiveErrorHandler(function(msg)
 local apiUtil = ChetchAPI(settings.network_api_endpoint);
 apiUtil.attachInitialisedHandler(function(inst)
 		if inst.network and inst.network.lan_ip and inst.services and inst.services["Chetch Messaging"] then
-			settings.messaging_ip = inst.network.lan_ip;
-			settings.messaging_port = inst.services["Chetch Messaging"].endpoint_port;
+			print("Received chetch messaging ip and port from services api");
+			--settings.messaging_ip = inst.network.lan_ip;
+			--settings.messaging_port = inst.services["Chetch Messaging"].endpoint_port;
 			
 			if client.ip ~= settings.messaging_ip or client.port ~= tonumber(settings.messaging_port) then
 				notificationBar("Network change so connecting client", "warning");
@@ -98,6 +99,7 @@ end
 -- Events
 
 events.create = function()
+	print("Starting remove BBSound ...");
 	selectArea("inside");
 end
 
@@ -113,7 +115,7 @@ events.focus = function()
 		end
 	);
 
-	apiUtil.init();
+	--apiUtil.init();
 	if client.ip then
 		client.connect();
 		notificationBar("Connecting from memory...", "info");

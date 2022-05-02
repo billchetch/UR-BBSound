@@ -1,4 +1,4 @@
 media_service_name: BBMedia
-messaging_ip: 192.168.1.115
+messaging_ip: 127.0.0.1
 messaging_port: 12000
 network_api_endpoint: http://localhost:8001/api
